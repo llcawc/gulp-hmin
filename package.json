@@ -1,0 +1,32 @@
+{
+  "name": "gulp-hmin",
+  "version": "0.0.1",
+  "description": "Minify html files. Added types. Fork from github:pioug/gulp-html-minifier-terser",
+  "author": "llcawc by pasmurno",
+  "license": "MIT",
+  "type": "module",
+  "main": "./gulp-hmin.js",
+  "exports": "./gulp-hmin.js",
+  "scripts": {
+    "tsc": "tsc -p ./tsconfig.json",
+    "dev": "gulp dev",
+    "build": "gulp build"
+  },
+  "dependencies": {
+    "html-minifier-terser": "^7.2.0",
+    "plugin-error": "^2.0.1",
+    "through2": "^4.0.2"
+  },
+  "devDependencies": {
+    "@types/html-minifier-terser": "^7.0.2",
+    "@types/through2": "^2.0.41",
+    "del": "^8.0.0",
+    "gulp": "^5.0.0",
+    "typescript": "^5.7.2"
+  },
+  "browserslist": [
+    ">= 0.5%",
+    "last 2 major versions",
+    "not dead"
+  ]
+}
