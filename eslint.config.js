@@ -1,12 +1,11 @@
-import pluginJs from '@eslint/js'
-import globals from 'globals'
+// @ts-check
+
+import eslint from '@eslint/js'
+import { defineConfig, globalIgnores } from 'eslint/config'
 import tseslint from 'typescript-eslint'
 
-/** @type {import('eslint').Linter.Config[]} */
-export default [
-  { files: ['**/*.{js,mjs,cjs,ts}'] },
-  { ignores: ['dist/**/*', 'src/js/prism.js', 'node_modules/**/*'] },
-  { languageOptions: { globals: globals.browser } },
-  pluginJs.configs.recommended,
-  ...tseslint.configs.recommended,
-]
+export default defineConfig([
+  eslint.configs.recommended,
+  tseslint.configs.recommended,
+  globalIgnores(['**/node_modules/', '.git/']),
+])

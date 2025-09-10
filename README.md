@@ -1,8 +1,6 @@
 # gulp-hmin
 
-Gulp plugin for minify ".html" files - used [html-minifier-terser](https://github.com/terser/html-minifier-terser) fork.
-
-Added types. Fork from [github:pioug/gulp-html-minifier-terser](https://github.com/pioug/gulp-html-minifier-terser)
+Gulp plugin for minify ".html" files - used [html-minifier-next](https://github.com/j9t/html-minifier-next).
 
 install:
 
@@ -40,7 +38,7 @@ export { clean, copy, minify };
 export const build = series(clean, copy, minify);
 ```
 
-To configure the options, you need to look at the [html-minifier-terser](https://github.com/terser/html-minifier-terser?tab=readme-ov-file#options-quick-reference) options documentation.
+To configure the options, you need to look at the [html-minifier-next](https://github.com/j9t/html-minifier-next) options documentation.
 
 ---
 

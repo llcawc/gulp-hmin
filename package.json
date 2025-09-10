@@ -1,58 +1,46 @@
 {
   "name": "gulp-hmin",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Gulp plugin for minify html files",
   "keywords": [
     "gulp",
     "minify",
-    "terser",
     "html"
   ],
   "license": "MIT",
   "author": "llcawc",
   "homepage": "https://github.com/llcawc/gulp-hmin",
   "type": "module",
-  "main": "./plugin/gulp-hmin.js",
-  "exports": "./plugin/gulp-hmin.js",
+  "main": "./lib/gulp-hmin.js",
+  "exports": "./lib/gulp-hmin.js",
+  "types": "./lib/gulp-hmin.d.ts",
   "files": [
-    "plugin",
+    "lib",
     "package.json",
     "LICENSE",
     "README.md"
   ],
   "scripts": {
     "format": "prettier --write .",
-    "lint": "prettier --check . && eslint ./ && stylelint src/**/*.css",
-    "fix": "eslint ./ --fix && stylelint src/**/*.css --fix",
-    "tsc": "tsc -p ./source",
-    "serve": "passerve",
-    "dev": "gulp dev",
-    "build": "gulp build"
+    "lint": "prettier --check . && eslint ./src",
+    "fix": "eslint ./ --fix",
+    "tsc": "tsc -p ./src"
   },
   "dependencies": {
-    "html-minifier-terser": "^7.2.0",
-    "plugin-error": "^2.0.1",
-    "through2": "^4.0.2"
+    "html-minifier-next": "^1.4.1",
+    "plugin-error": "^2.0.1"
   },
   "devDependencies": {
-    "@eslint/js": "^9.22.0",
-    "@types/html-minifier-terser": "^7.0.2",
-    "@types/node": "^22.13.10",
-    "@types/through2": "^2.0.41",
+    "@eslint/js": "^9.35.0",
+    "@types/html-minifier-next": "^1.1.0",
+    "@types/node": "^24.3.1",
     "@types/vinyl": "^2.0.12",
-    "del": "^8.0.0",
-    "eslint": "^9.22.0",
-    "globals": "^16.0.0",
-    "gulp": "^5.0.0",
-    "passerve": "^1.1.6",
-    "prettier": "^3.5.3",
+    "eslint": "^9.35.0",
+    "prettier": "^3.6.2",
     "prettier-plugin-embed": "^0.5.0",
-    "prettier-plugin-organize-imports": "^4.1.0",
-    "stylelint": "^16.15.0",
-    "stylelint-config-clean-order": "^7.0.0",
-    "stylelint-config-standard": "^37.0.0",
-    "typescript": "^5.8.2",
-    "typescript-eslint": "^8.26.1",
-    "vinyl": "^3.0.0"
+    "prettier-plugin-organize-imports": "^4.2.0",
+    "typescript": "^5.9.2",
+    "typescript-eslint": "^8.43.0",
+    "vinyl": "^3.0.1"
   }
 }
