@@ -11,8 +11,8 @@ type MinifierOptions = Parameters<typeof htmlmin.minify>[1]
 
 /**
  * Gulp plugin for minify html files
- * @param options
- * To configure the options, you need to look at the (https://github.com/j9t/html-minifier-next) options documentation.
+ * @param options MinifierOptions: To configure the options, you need to look at the (https://github.com/j9t/html-minifier-next) options documentation.
+ * @returns Transforn stream
  */
 export default function gulpHmin(options: MinifierOptions = {}): Transform {
   const stream = new Transform({ objectMode: true })
