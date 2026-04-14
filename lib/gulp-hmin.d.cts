@@ -9,5 +9,4 @@ type MinifierOptions = Parameters<typeof htmlmin.minify>[1];
  * To configure the options, you need to look at the (https://github.com/j9t/html-minifier-next) options documentation.
  */
 declare function gulpHmin(options?: MinifierOptions): Transform;
-//#endregion
-export { gulpHmin as default };
+export = gulpHmin;

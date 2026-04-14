@@ -1,46 +1,55 @@
 {
   "name": "gulp-hmin",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Gulp plugin for minify html files",
   "keywords": [
     "gulp",
-    "minify",
-    "html"
+    "html",
+    "minify"
   ],
+  "homepage": "https://github.com/llcawc/gulp-hmin",
   "license": "MIT",
   "author": "llcawc",
-  "homepage": "https://github.com/llcawc/gulp-hmin",
-  "type": "module",
-  "main": "./lib/gulp-hmin.js",
-  "exports": "./lib/gulp-hmin.js",
-  "types": "./lib/gulp-hmin.d.ts",
   "files": [
     "lib",
     "package.json",
     "LICENSE",
     "README.md"
   ],
+  "type": "module",
+  "main": "./lib/gulp-hmin.cjs",
+  "module": "./lib/gulp-hmin.js",
+  "types": "./lib/gulp-hmin.d.cts",
+  "exports": {
+    ".": {
+      "import": "./lib/gulp-hmin.js",
+      "require": "./lib/gulp-hmin.cjs"
+    },
+    "./package.json": "./package.json"
+  },
   "scripts": {
-    "format": "prettier --write .",
-    "lint": "prettier --check . && eslint ./src",
-    "fix": "eslint ./ --fix",
-    "tsc": "tsc -p ./src"
+    "test": "vitest",
+    "lint": "oxlint",
+    "fix": "oxlint --fix",
+    "check": "oxfmt --check",
+    "fmt": "oxfmt",
+    "typecheck": "tsc --noEmit",
+    "validate": "oxlint && tsc --noEmit",
+    "build": "tsdown -d ./lib"
   },
   "dependencies": {
-    "html-minifier-next": "^2.1.3",
+    "html-minifier-next": "^6.1.2",
     "plugin-error": "^2.0.1"
   },
   "devDependencies": {
-    "@eslint/js": "^9.35.0",
-    "@types/html-minifier-next": "^1.1.0",
-    "@types/node": "^24.4.0",
+    "@types/node": "^25.6.0",
     "@types/vinyl": "^2.0.12",
-    "eslint": "^9.35.0",
-    "prettier": "^3.6.2",
-    "prettier-plugin-embed": "^0.5.0",
-    "prettier-plugin-organize-imports": "^4.2.0",
-    "typescript": "^5.9.2",
-    "typescript-eslint": "^8.44.0",
-    "vinyl": "^3.0.1"
+    "@typescript/native-preview": "7.0.0-dev.20260414.1",
+    "oxfmt": "^0.45.0",
+    "oxlint": "^1.60.0",
+    "tsdown": "^0.21.8",
+    "typescript": "^6.0.2",
+    "vinyl": "^3.0.1",
+    "vitest": "^4.1.4"
   }
 }

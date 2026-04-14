@@ -2,10 +2,10 @@
   "compilerOptions": {
     "target": "ESNext",
     "lib": ["ESNext", "DOM", "DOM.Iterable"],
-    "module": "ESNext",
-    "moduleResolution": "Bundler",
-    "rootDir": "./",
-    "outDir": "../lib",
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "rootDir": "./src",
+    "outDir": "./lib",
     "declaration": true,
     "newLine": "lf",
     "strict": true,
@@ -15,7 +15,8 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
+    "isolatedDeclarations": true
   },
-  "include": ["./"],
-  "exclude": ["../*.*"],
+  "include": ["./src/*.ts"],
+  "exclude": ["**/*.js", "lib/**"]
 }
